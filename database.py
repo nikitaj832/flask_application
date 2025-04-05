@@ -1,10 +1,10 @@
-import mysql.connector
+import pymysql
 
 def get_connector():
-    conn = mysql.connector.connect(
+    conn = pymysql.connect(
         host = "localhost",
         user = "root",
-        password = "1234",
+        password = "Niki321905jain",
         database = "sakila",
         port = 3306
     )
