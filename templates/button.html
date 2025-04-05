@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Page</title>
+    <style>
+        .btn1 {
+            background-color: rgb(96, 165, 100);
+            border: 2px solid black;
+            color: white;
+            border-radius: 20px;
+            width: 100px;
+            padding: 12px;
+            font-weight: bold;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .btn1:hover {
+            background-color: rgb(70, 142, 73);
+        }
+        .box {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function navigateTo(url) {
+            var columnName = document.getElementById("columnInput").value;
+            if (columnName) {
+                window.location.href = url.replace("COLUMN_NAME", columnName);
+            } else {
+                alert("Please enter a column name.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="columnInput" placeholder="Enter Column Name">
+        <button class="btn1" onclick="navigateTo('http://127.0.0.1:5000/group/COLUMN_NAME')">GroupBy</button>
+        <button class="btn1" onclick="navigateTo('http://127.0.0.1:5000/top5/COLUMN_NAME')">Top5</button>
+        <button class="btn1" onclick="navigateTo('http://127.0.0.1:5000/pie/COLUMN_NAME')">Pie</button>
+    </div>
+</body>
+</html>
